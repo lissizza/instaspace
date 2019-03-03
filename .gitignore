@@ -1,2 +1,6 @@
 __pycache__
+.env
 /images/
+*.log
+*.txt
+*.checkpoint
