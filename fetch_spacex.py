@@ -10,6 +10,8 @@ logger = utils.set_logger('SpaceX')
 def get_mission_name_and_images_urls(mission) -> (str, list):
     latest_launch_api_url = f'{settings.SPACEX_API_URL}{mission}'
     response = requests.get(latest_launch_api_url)
+    print(response.url)
+    print(response.json())
     response.raise_for_status()
     response_dict = response.json()
     try:
@@ -27,7 +29,7 @@ def fetch_spacex(args) -> None:
         mission_name, images_urls = get_mission_name_and_images_urls(mission)
     except Exception as e:
         logger.error(
-            'An error occured, SpaceX images data cannot be retrieved: %s',
+            'An error is occurred, SpaceX images data cannot be retrieved: %s',
             str(e)
         )
         return

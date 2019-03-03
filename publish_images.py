@@ -31,8 +31,8 @@ def publish_images(args: argparse.Namespace) -> None:
     
     logger.info('Start publishing to Instagram.')
     load_dotenv()
-    username = os.getenv('INSTA_LOGIN')
-    password = os.getenv('INSTA_PASS')
+    username = os.getenv('LOGIN')
+    password = os.getenv('PASSWORD')
     bot = Bot()
     bot.login(username=username, password=password)
 

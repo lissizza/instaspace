@@ -52,7 +52,7 @@ def fetch_hubble(args: argparse.Namespace) -> None:
         image_data = get_collection_images_ids_and_names(collection)
     except Exception as e:
         logger.error(
-            'An error occured, Hubble images data cannot be retrieved: %s',
+            'An error is occurred, Hubble images data cannot be retrieved: %s',
             str(e)
         )
         return
@@ -82,7 +82,7 @@ def fetch_hubble(args: argparse.Namespace) -> None:
             is_downloaded = utils.download_image(image_url, image_path)
         except Exception as e:
             logger.error(
-                'Error occured, the image %s was not downloaded: %s',
+                'An error is occurred, the image %s was not downloaded: %s',
                 image_name,
                 str(e)
             )
