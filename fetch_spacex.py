@@ -10,8 +10,6 @@ logger = utils.set_logger('SpaceX')
 def get_mission_name_and_images_urls(mission) -> (str, list):
     latest_launch_api_url = f'{settings.SPACEX_API_URL}{mission}'
     response = requests.get(latest_launch_api_url)
-    print(response.url)
-    print(response.json())
     response.raise_for_status()
     response_dict = response.json()
     try:
